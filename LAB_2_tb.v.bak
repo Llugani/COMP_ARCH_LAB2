@@ -1,0 +1,38 @@
+`timescale 1ns / 1ps
+
+module LAB_2_tb (i, o)
+input i;
+output o;
+
+reg in;
+reg clock;
+reg reset;
+wire out;
+
+
+LAB_2 DUT(.clk(clock), .rst(reset), .a(in), .F(out);
+
+initial begin 
+clock = 0;
+forever #5 clock = ~clock;
+end
+
+
+initial begin 
+in = 0;
+reset = 1;
+
+#20
+reset = 0;
+
+in = 1;
+#20
+in = 0;
+#20
+in = 0;
+#20
+in = 1;
+#20
+end
+
+endmodule
